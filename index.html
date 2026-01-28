@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>13 DEGREES | BLUEFIN MENU ARCHITECTURE</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <span class="eyebrow">Exclusive Presentation</span>
+            <h1>13 Degrees: <br><span class="highlight">Bluefin Menu Architecture</span></h1>
+            <p>Smart Luxury Concept: High-end gastronomy with zero kitchen stress.</p>
+            <a href="#menu" class="btn-primary">Explore the Menu</a>
+        </div>
+    </header>
+
+    <section class="intro">
+        <div class="container">
+            <div class="intro-grid">
+                <div class="intro-text">
+                    <h2>The Concept: <br>“Raw, Rare & Crispy”</h2>
+                    <p>We combine the prestige of Bluefin Tuna with high-precision technology (Sous-Vide, Aburi, Slicing) to deliver Michelin-level quality without the need for a full stovetop kitchen.</p>
+                </div>
+                <div class="intro-features">
+                    <div class="feature-item">
+                        <span class="feature-icon">✨</span>
+                        <h3>VIP Aesthetics</h3>
+                        <p>Plating designed for the Balearic/Estepona upscale lifestyle.</p>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">⚡</span>
+                        <h3>Smart Ops</h3>
+                        <p>90% prep, 10% service. No stress for the chef during peak hours.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="menu" class="menu-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>The Interactive Menu</h2>
+                <p>Click on any dish to view its technical map and economic breakdown</p>
+            </div>
+            <div class="menu-grid">
+                <!-- Item 1 -->
+                <article class="menu-card reveal" data-dish="tataki">
+                    <div class="card-img-wrapper">
+                        <img src="assets/tuna_tataki_aburi.png" alt="Tuna Tataki Aburi">
+                        <div class="card-overlay">
+                            <span>Open Details</span>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3>Tuna Tataki "Smoky Aburi"</h3>
+                        <p class="description">Lightly seared Bluefin tuna with a blowtorch, citrus ponzu, microgreens, and toasted sesame.</p>
+                        <div class="pairing">
+                            <strong>Wine Pairing:</strong> Pinot Noir / Rosado
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Item 2 -->
+                <article class="menu-card reveal" data-dish="crispy">
+                    <div class="card-img-wrapper">
+                        <img src="assets/crispy_rice_tuna_tartare.png" alt="Crispy Rice & Tuna Tartare">
+                        <div class="card-overlay">
+                            <span>Open Details</span>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3>Crispy Rice & Spicy Tuna</h3>
+                        <p class="description">Golden deep-fried rice blocks topped with spicy tuna tartare, truffle aioli, and jalapeño.</p>
+                        <div class="pairing">
+                            <strong>Wine Pairing:</strong> Cava / Champagne
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Item 3 -->
+                <article class="menu-card reveal" data-dish="mosaic">
+                    <div class="card-img-wrapper">
+                        <img src="assets/tuna_carpaccio_mosaic.png" alt="Tuna Carpaccio Mosaic">
+                        <div class="card-overlay">
+                            <span>Open Details</span>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3>Mediterranean "Mosaic"</h3>
+                        <p class="description">Ultra-thin slices of Bluefin tuna, capers, lemon zest, and premium EVOO. Pure elegance.</p>
+                        <div class="pairing">
+                            <strong>Wine Pairing:</strong> Albariño / Sauvignon Blanc
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Item 4 -->
+                <article class="menu-card reveal" data-dish="gilda">
+                    <div class="card-img-wrapper">
+                        <img src="assets/vip_gilda_collection.png" alt="VIP Gilda Collection">
+                        <div class="card-overlay">
+                            <span>Open Details</span>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3>VIP Gilda "Roses"</h3>
+                        <p class="description">A reinvented classic: Iberico Ham roses, premium olives, and guindilla peppers on a skewer.</p>
+                        <div class="pairing">
+                            <strong>Wine Pairing:</strong> Fino Sherry / White Dry
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Professional Modal for Kitchen Technical Cards -->
+    <div id="modal" class="modal">
+        <div class="modal-backdrop"></div>
+        <div class="modal-container">
+            <button class="modal-close">&times;</button>
+            
+            <div class="modal-content">
+                <!-- Image Container (Shrinks and slides up) -->
+                <div class="modal-image-box">
+                    <img id="modal-img" src="" alt="">
+                    <button class="btn-info-trigger">INFO & TECHNICAL SHEET</button>
+                    <button class="btn-close-sheet">VIEW IMAGE ONLY</button>
+                </div>
+
+                <!-- Technical Card (Slides up from below) -->
+                <div class="modal-tech-card">
+                    <div class="ficha-header">
+                        <span class="ficha-label">FICHA TÉCNICA DE COCINA</span>
+                        <h2 id="modal-title"></h2>
+                        <div class="ficha-meta">
+                            <span><strong>Raciones:</strong> 1 persona</span>
+                            <span><strong>Prep Time:</strong> < 5 min</span>
+                        </div>
+                    </div>
+
+                    <div class="ficha-body">
+                        <div class="ficha-column">
+                            <h3><span class="icon">🥗</span> ИНГРЕДИЕНТЫ</h3>
+                            <ul id="modal-ingredients" class="kitchen-list"></ul>
+                        </div>
+                        <div class="ficha-column">
+                            <h3><span class="icon">🍳</span> ПРИГОТОВЛЕНИЕ</h3>
+                            <div class="sauce-block">
+                                <h4>Соус и База:</h4>
+                                <p id="modal-sauce"></p>
+                            </div>
+                            <ol id="modal-steps" class="kitchen-steps"></ol>
+                        </div>
+                    </div>
+
+                    <div class="ficha-equipment">
+                        <h3><span class="icon">🛠️</span> ОБОРУДОВАНИЕ</h3>
+                        <p id="modal-equi"></p>
+                    </div>
+
+                    <div class="ficha-footer">
+                        <div class="cost-item">
+                            <span class="label">FOOD COST (MATERIA PRIMA)</span>
+                            <span id="modal-cost" class="value"></span>
+                        </div>
+                        <div class="cost-item">
+                            <span class="label">PVP (PRECIO VENTA)</span>
+                            <span id="modal-pvp" class="value highlight"></span>
+                        </div>
+                        <div class="cost-item highlight-box">
+                            <span class="label">PROFIT MARGIN</span>
+                            <span id="modal-margin" class="value profit"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Atmosphere & Lifestyle Section -->
+    <section class="atmosphere">
+        <div class="parallax-bg" style="background-image: url('assets/facebook/471294467_122130011582572577_8444876307954081098_n.jpg');"></div>
+        <div class="atmosphere-overlay"></div>
+        <div class="container relative">
+            <div class="section-title">
+                <span class="eyebrow">The Vibe</span>
+                <h2>More Than Just Food</h2>
+                <p>13 Degrees is where Estepona’s soul meets high-end mixology and vibrant social life.</p>
+            </div>
+            
+            <div class="lifestyle-grid">
+                <div class="lifestyle-item reveal">
+                    <img src="assets/facebook/471170183_122128362296572577_6777743808295086014_n.jpg" alt="Vibe 1">
+                </div>
+                <div class="lifestyle-item reveal">
+                    <img src="assets/facebook/471200641_122130011354572577_5012237729507196814_n.jpg" alt="Vibe 2">
+                </div>
+                <div class="lifestyle-item reveal">
+                    <img src="assets/facebook/Boss_n.jpg" alt="Vibe 3">
+                </div>
+                <div class="lifestyle-item reveal">
+                    <img src="assets/facebook/470681455_122128164530572577_3967992789855390523_n.jpg" alt="Vibe 4">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <h2>Ready to transform the guest experience?</h2>
+            <p>Full project developed for 13 Degrees Lounge BAR.</p>
+            <a href="https://wa.me/48537617365" target="_blank" class="btn-primary">Connect with Julia</a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
