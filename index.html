@@ -49,8 +49,15 @@
                 <h2>The Interactive Menu</h2>
                 <p>Click on any dish to view its technical map and economic breakdown</p>
             </div>
+
+            <!-- Category Switcher -->
+            <nav class="category-nav">
+                <button class="category-btn active" data-category="tuna">Bluefin Tuna</button>
+                <button class="category-btn" data-category="salmon">Atlantic Salmon</button>
+            </nav>
+
             <div class="menu-grid">
-                <!-- Item 1 -->
+                <!-- Item 1 (Tuna) -->
                 <article class="menu-card reveal" data-dish="tataki">
                     <div class="card-img-wrapper">
                         <img src="assets/tuna_tataki_aburi.png" alt="Tuna Tataki Aburi">
@@ -67,7 +74,7 @@
                     </div>
                 </article>
 
-                <!-- Item 2 -->
+                <!-- Item 2 (Tuna) -->
                 <article class="menu-card reveal" data-dish="crispy">
                     <div class="card-img-wrapper">
                         <img src="assets/crispy_rice_tuna_tartare.png" alt="Crispy Rice & Tuna Tartare">
@@ -84,7 +91,7 @@
                     </div>
                 </article>
 
-                <!-- Item 3 -->
+                <!-- Item 3 (Tuna) -->
                 <article class="menu-card reveal" data-dish="mosaic">
                     <div class="card-img-wrapper">
                         <img src="assets/tuna_carpaccio_mosaic.png" alt="Tuna Carpaccio Mosaic">
@@ -101,7 +108,7 @@
                     </div>
                 </article>
 
-                <!-- Item 4 -->
+                <!-- Item 4 (Tuna) -->
                 <article class="menu-card reveal" data-dish="gilda">
                     <div class="card-img-wrapper">
                         <img src="assets/vip_gilda_collection.png" alt="VIP Gilda Collection">
@@ -114,6 +121,74 @@
                         <p class="description">A reinvented classic: Iberico Ham roses, premium olives, and guindilla peppers on a skewer.</p>
                         <div class="pairing">
                             <strong>Wine Pairing:</strong> Fino Sherry / White Dry
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Item 5 (Salmon) -->
+                <article class="menu-card reveal" data-dish="salmon-tataki" style="display: none;">
+                    <div class="card-img-wrapper">
+                        <img src="assets/salmon_tataki_aburi.png" alt="Salmon Tataki Aburi">
+                        <div class="card-overlay">
+                            <span>Open Details</span>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3>Salmon Tataki "Citrus Aburi"</h3>
+                        <p class="description">Fresh Atlantic salmon lightly seared with a citrus-yuzu cream and black sesame.</p>
+                        <div class="pairing">
+                            <strong>Wine Pairing:</strong> Chardonnay / Rosé
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Item 6 (Salmon) -->
+                <article class="menu-card reveal" data-dish="salmon-crispy" style="display: none;">
+                    <div class="card-img-wrapper">
+                        <img src="assets/crispy_rice_salmon_tartare.png" alt="Crispy Rice & Salmon Tartare">
+                        <div class="card-overlay">
+                            <span>Open Details</span>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3>Crispy Rice & Salmon Tartare</h3>
+                        <p class="description">Crunchy rice blocks topped with fresh salmon tartare and spicy truffle mayo.</p>
+                        <div class="pairing">
+                            <strong>Wine Pairing:</strong> Sparkling Wine / Cava
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Item 7 (Salmon) -->
+                <article class="menu-card reveal" data-dish="salmon-mosaic" style="display: none;">
+                    <div class="card-img-wrapper">
+                        <img src="assets/salmon_carpaccio_mosaic.png" alt="Salmon Carpaccio Mosaic">
+                        <div class="card-overlay">
+                            <span>Open Details</span>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3>Salmon Mosaic "Ocean Sun"</h3>
+                        <p class="description">Silky salmon slices with lemon pearls and caper-infused oil. A masterpiece of colors.</p>
+                        <div class="pairing">
+                            <strong>Wine Pairing:</strong> Chenin Blanc / Dry White
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Item 8 (Salmon) -->
+                <article class="menu-card reveal" data-dish="salmon-gilda" style="display: none;">
+                    <div class="card-img-wrapper">
+                        <img src="assets/salmon_tartare_gilda.png" alt="Salmon Gilda Silk">
+                        <div class="card-overlay">
+                            <span>Open Details</span>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3>Salmon Gilda "Silk"</h3>
+                        <p class="description">A luxurious twist on the traditional Gilda, featuring silky rolls of fresh salmon.</p>
+                        <div class="pairing">
+                            <strong>Wine Pairing:</strong> Manzanilla / White Vermouth
                         </div>
                     </div>
                 </article>

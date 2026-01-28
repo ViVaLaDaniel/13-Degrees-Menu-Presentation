@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const dishData = {
         tataki: {
+            category: 'tuna',
             title: 'Tuna Tataki "Smoky Aburi"',
             img: 'assets/tuna_tataki_aburi.png',
             ingredients: [
@@ -25,6 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
             margin: '+€18.50'
         },
         crispy: {
+            category: 'tuna',
             title: 'Crispy Rice & Spicy Tuna',
             img: 'assets/crispy_rice_tuna_tartare.png',
             ingredients: [
@@ -49,6 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
             margin: '+€16.80'
         },
         mosaic: {
+            category: 'tuna',
             title: 'Mediterranean Tuna "Mosaic"',
             img: 'assets/tuna_carpaccio_mosaic.png',
             ingredients: [
@@ -73,6 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
             margin: '+€18.50'
         },
         gilda: {
+            category: 'tuna',
             title: 'VIP Gilda "Roses"',
             img: 'assets/vip_gilda_collection.png',
             ingredients: [
@@ -93,6 +97,94 @@ document.addEventListener('DOMContentLoaded', () => {
             cost: '€3.80',
             pvp: '€16.00',
             margin: '+€12.20'
+        },
+        'salmon-tataki': {
+            category: 'salmon',
+            title: 'Salmon Tataki "Citrus Aburi"',
+            img: 'assets/salmon_tataki_aburi.png',
+            ingredients: [
+                '150g Fresh Atlantic Salmon (Norwegian)',
+                '10ml Citrus Cream (Yuzu/Lime)',
+                'Micro-coriander',
+                'Black sesame seeds',
+                'Maldon Salt crystals'
+            ],
+            sauce: '<strong>Yuzu-Cream Emulsion:</strong> Смешайте густые сливки высокой жирности с соком и цедрой юдзу (5:1). Добавьте щепотку белого перца. Соус должен быть холодным и плотным.',
+            steps: [
+                'Опалите только края salmon-lomo горелкой (эффект Aburi).',
+                'Нарежьте на слайсы 0.7см.',
+                'Нанесите по одной капле Citrus Cream на каждый слайс.',
+                'Украсьте микрозеленью и черным сезамом.'
+            ],
+            equipment: 'Горелка, Острый нож (Yanagiba), Кондитерский мешок.',
+            cost: '€6.20',
+            pvp: '€24.00',
+            margin: '+€17.80'
+        },
+        'salmon-crispy': {
+            category: 'salmon',
+            title: 'Crispy Rice & Salmon Tartare',
+            img: 'assets/crispy_rice_salmon_tartare.png',
+            ingredients: [
+                '80g Tartar de Salmón Fresco',
+                '2 брусочка риса для суши (фри)',
+                '5ml Spicy Mayo (Sriracha based)',
+                'Golden Leaf (edible)',
+                'Jalapeño slice'
+            ],
+            sauce: '<strong>Spicy Salmon Mix:</strong> Порубите лосось мелким кубиком, смешайте с японским майонезом и шрирачей. Дайте постоять 10 минут для объединения вкусов.',
+            steps: [
+                'Обжарьте рис во фритюре до "каменной" золотистой корочки.',
+                'Выложите горку тартара сверху.',
+                'Добавьте слайс халапеньо и частицу золота для VIP подачи.'
+            ],
+            equipment: 'Фритюрница, Пинцет.',
+            cost: '€4.50',
+            pvp: '€22.00',
+            margin: '+€17.50'
+        },
+        'salmon-mosaic': {
+            category: 'salmon',
+            title: 'Salmon Mosaic "Ocean Sun"',
+            img: 'assets/salmon_carpaccio_mosaic.png',
+            ingredients: [
+                '110g Premium Salmon Lomo',
+                'Lemon Pearls (molecular)',
+                'Caper-infused oil',
+                'Edible flowers (violas)',
+                'Dill oil'
+            ],
+            sauce: '<strong>Herbal Fusion:</strong> Масло, настоянное на укропе и каперсах, смешанное с лимонными жемчужинами. Легкая кислотность подчеркивает жирность лосося.',
+            steps: [
+                'Тончайшая нарезка на слайсере (уровень 1.5).',
+                'Выкладка идеальным кругом (мозаика).',
+                'Декорирование жемчужинами и цветами.'
+            ],
+            equipment: 'Слайсер, Пинцет.',
+            cost: '€5.80',
+            pvp: '€25.00',
+            margin: '+€19.20'
+        },
+        'salmon-gilda': {
+            category: 'salmon',
+            title: 'Salmon Gilda "Silk"',
+            img: 'assets/salmon_tartare_gilda.png',
+            ingredients: [
+                '40g Silky Salmon Roll',
+                '1 Gordal Olive XL',
+                '1 Silver Anchovy (Boquerón)',
+                'Herb oil glaze'
+            ],
+            sauce: '<strong>Mediterranean Glaze:</strong> Оливковое масло экстра-вирджен, настоянное на свежих травах. Используется для придания блеска и тонкого аромата.',
+            steps: [
+                'Сложите слайс лосося в "шелковую" складку.',
+                'Нанизайте на шпажку вместе с оливкой и анчоусом.',
+                'Покройте глазурью из трав.'
+            ],
+            equipment: 'Дизайнерские шпажки, Кисточка для масла.',
+            cost: '€4.10',
+            pvp: '€18.00',
+            margin: '+€13.90'
         }
     };
 
@@ -107,6 +199,36 @@ document.addEventListener('DOMContentLoaded', () => {
     const modalCost = document.getElementById('modal-cost');
     const modalPvp = document.getElementById('modal-pvp');
     const modalMargin = document.getElementById('modal-margin');
+
+    // Category Switching
+    const categoryBtns = document.querySelectorAll('.category-btn');
+    const menuSection = document.querySelector('.menu-grid');
+
+    categoryBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const category = btn.dataset.category;
+            
+            // UI Toggle
+            categoryBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            // Grid Animation
+            menuSection.style.opacity = '0';
+            setTimeout(() => {
+                document.querySelectorAll('.menu-card').forEach(card => {
+                    const dish = card.dataset.dish;
+                    if (dishData[dish].category === category) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+                menuSection.style.opacity = '1';
+                // Trigger reveal for new items
+                document.querySelectorAll('.menu-card').forEach(el => observer.observe(el));
+            }, 300);
+        });
+    });
 
     // Open Modal
     document.querySelectorAll('.menu-card').forEach(card => {
