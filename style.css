@@ -11,6 +11,12 @@
     --border-gold: rgba(212, 175, 55, 0.4);
 }
 
+/* Optimization for rendering */
+.menu-section, .atmosphere, .cta-banner {
+    content-visibility: auto;
+    contain-intrinsic-size: 1px 1000px;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -123,6 +129,12 @@ h1 { font-family: var(--header-font); font-size: clamp(2.5rem, 8vw, 4.5rem); lin
 .category-btn.active {
     color: var(--accent-gold);
     border-bottom-color: var(--accent-gold);
+}
+
+.category-btn[data-category="salmon"].active {
+    color: #00d2ff; /* Sky Blue for Nordic vibes */
+    border-bottom-color: #00d2ff;
+    text-shadow: 0 0 15px rgba(0, 210, 255, 0.4);
 }
 
 .menu-grid { 
@@ -428,3 +440,43 @@ h1 { font-family: var(--header-font); font-size: clamp(2.5rem, 8vw, 4.5rem); lin
 /* Observer Animations */
 .reveal { opacity: 0; transform: translateY(30px); transition: 0.8s cubic-bezier(0.19, 1, 0.22, 1); }
 .reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* CTA Banner Section */
+.cta-banner {
+    padding: 120px 0;
+    background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&q=80&w=1974');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    text-align: center;
+    border-top: 1px solid rgba(255,255,255,0.05);
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.cta-banner h2 {
+    font-family: var(--header-font);
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    color: var(--accent-gold);
+    margin-bottom: 1.5rem;
+    letter-spacing: 2px;
+}
+
+.cta-banner p {
+    max-width: 800px;
+    margin: 0 auto 3rem;
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    line-height: 1.8;
+}
+
+.cta-banner .btn-primary {
+    transform: scale(1.1);
+    transition: 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.cta-banner .btn-primary:hover {
+    transform: scale(1.15);
+    box-shadow: 0 20px 40px rgba(212, 175, 55, 0.4);
+}
+
+.text-center { text-align: center; }
